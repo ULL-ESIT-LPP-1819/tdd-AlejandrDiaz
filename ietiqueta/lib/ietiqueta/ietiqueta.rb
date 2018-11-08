@@ -83,8 +83,6 @@ class EInformacionN
     end
     
     
-    
-    
     def get_cantfibra
         
        @fibraa

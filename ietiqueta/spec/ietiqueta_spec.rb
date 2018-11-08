@@ -82,8 +82,47 @@ describe EInformacionN do
     
     end
     
+    it "Debe existir un metodo para obtener la cantidad de hidratos de carbono" do
+        
+    expect(@etiqueta).to respond_to(:get_hidratoscarb)
     
+    end
     
+    it "Debe existir un metodo para obtener la cantidad de hidratos de azucares" do
+        
+    expect(@etiqueta).to respond_to(:get_cantazucares)
+    
+    end
+    
+    it "Debe existir un metodo para obtener la cantidad de fibra alimentaria" do
+        
+    expect(@etiqueta).to respond_to(:get_cantfibra)
+    
+    end
+    
+    it "Debe existir un metodo para obtener la cantidad de proteinas" do
+        
+    expect(@etiqueta).to respond_to(:get_cantproteinas)
+    
+    end
+    
+    it "Debe existir un metodo para obtener la cantidad de sales " do
+        
+    expect(@etiqueta).to respond_to(:get_cantsal)
+    
+    end
+    
+    it "Debe existir un metodo para obtener el nombre de la etiqueta formateado " do
+        
+    expect(@etiqueta).to respond_to(:to_s)
+    
+    end
+    
+    it "Debe existir un metodo para obtener la cantidad de grasas formateada " do
+        
+    expect(@etiqueta).to respond_to(:to_f)
+    
+    end
     
     
     
