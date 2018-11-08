@@ -1,8 +1,8 @@
 class EInformacionN
     
-    attr_reader :netiqueta, :venergetico[1], :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
+    attr_reader :netiqueta, :venergeticokJ, :venegerticokcal, :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
     
-    attr_writer :netiqueta, :venergetico[1], :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
+    attr_writer :netiqueta, :venergeticokJ, :venergeticokcal, :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
     
     def initialize(nombretiqueta, cantidadgrasas, cantidadgrasasat, hidratoscarbono, cazucares, cfibraa, cproteinas, csal)
       
@@ -45,13 +45,13 @@ class EInformacionN
 
     def get_valenergeticokJ
         
-        @venergetico[0]= 2189
+        @venergeticokJ= 2189
     
     end
     
     def get_valenergeticokcal
         
-        @venergetico[1]= (2189*0.2388)
+        @venergeticokcal= (2189*0.2388)
         
     end
     

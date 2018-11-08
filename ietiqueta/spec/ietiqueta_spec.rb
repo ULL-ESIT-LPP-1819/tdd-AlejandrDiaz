@@ -126,4 +126,13 @@ describe EInformacionN do
     
     
     
+    it "Debe existir un metodo para pasar el valor energetico de Kj a kcal" do
+    
+ 
+    @etiqueta.get_valenergeticokcal
+    expect(@etiqueta.get_valenergeticokcal).to eq(522.7332)
+    
+    end
+    
+    
 end
