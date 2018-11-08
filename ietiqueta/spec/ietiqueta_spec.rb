@@ -52,6 +52,39 @@ describe EInformacionN do
     
     end
     
+    it "Debe existir un metodo para obtener el nombre de la etiqueta" do
+        
+    expect(@etiqueta).to respond_to(:get_nombetiqueta)
+    
+    end
+    
+    it "Debe existir un metodo para obtener el valor energetico en kJ" do
+        
+    expect(@etiqueta).to respond_to(:get_valenergeticokJ)
+    
+    end
+    
+    it "Debe existir un metodo para obtener el valor energetico en kcal" do
+        
+    expect(@etiqueta).to respond_to(:get_valenergeticokcal)
+    
+    end
+    
+    it "Debe existir un metodo para obtener la cantidad de grasas" do
+        
+    expect(@etiqueta).to respond_to(:get_cangrasas)
+    
+    end
+    
+    it "Debe existir un metodo para obtener la cantidad de grasas saturadas" do
+        
+    expect(@etiqueta).to respond_to(:get_cangrasasat)
+    
+    end
+    
+    
+    
+    
     
     
 end

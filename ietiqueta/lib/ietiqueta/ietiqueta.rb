@@ -40,21 +40,23 @@ class EInformacionN
     
     
     
-    def valor_energetico
-        
-    @venergetico[0]= 2189
-    @venergetico[1]= (2189*0.2388)
-    
-    end
-    
     
 #---Gets----
 
-    def get_valenergetico
+    def get_valenergeticokJ
         
-        @venergetico
+        @venergetico[0]= 2189
     
     end
+    
+    def get_valenergeticokcal
+        
+        @venergetico[1]= (2189*0.2388)
+        
+    end
+    
+    
+    
     
     def get_cangrasas
         
