@@ -1,12 +1,13 @@
 class EInformacionN
     
-    attr_reader :netiqueta, :venergeticokJ, :venegerticokcal, :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
+    attr_accessor :netiqueta, :venergeticokJ, :venergeticokcal, :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
     
-    attr_writer :netiqueta, :venergeticokJ, :venergeticokcal, :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
     
-    def initialize(nombretiqueta, cantidadgrasas, cantidadgrasasat, hidratoscarbono, cazucares, cfibraa, cproteinas, csal)
+    def initialize(nombretiqueta, venergeticokj, venergeticokca, cantidadgrasas, cantidadgrasasat, hidratoscarbono, cazucares, cfibraa, cproteinas, csal)
       
-     @netiqueta = nombretiqueta   
+     @netiqueta = nombretiqueta
+     @venergeticokJ = venergeticokj
+     @venergeticokcal = venergeticokca
      @cantgrasas = cantidadgrasas
      @cantgrasasat = cantidadgrasasat
      @hidratosc = hidratoscarbono
@@ -33,139 +34,29 @@ class EInformacionN
     "#{@hidratosc}"
     "#{@azucares}"
     "#{@proteinas}"
+    "#{@sales}"
+    
     
     end
     
     
-    
-    
-    
-    
-#---Gets----
+=begin
+def get_conjunto_sales
+        i = 1
+        salida = @sales[0].to_f
+       while (i < @sales.length) do
+          salida +=  @sales[i].to_f
+           i += 1
+        end
+        salida
+end 
 
-    def get_valenergeticokJ
-        
-        @venergeticokJ= 2189
-    
-    end
-    
-    def get_valenergeticokcal
-        
-        @venergeticokcal= (2189*0.2388)
-        
-    end
-    
-    
-    
-    
-    def get_cangrasas
-        
-        @cantgrasas
-    
-    end
-    
-    def get_cangrasasat
-        
-        @cantgrasasat
-    
-    end
-    
-    def get_hidratoscarb
-        
-        @hidratosc
-    
-    end
-    
-    def get_cantazucares
-        
-        @azucares
-    
-    end
-    
-    
-    def get_cantfibra
-        
-       @fibraa
-        
-    end
-    
-    def get_cantproteinas
-        
-        @proteinas
-    
-    end
-    
-    
-    def get_cantsal
-        
-       @sales
-        
-    end
-    
-    def get_nombetiqueta
-        
-       @netiqueta
-        
-    end
-    
-        
-        
-        
-#-----Sets-----
-    
-    
-    def set_valenergetico(vaenergetico)
-        
-        @venergetico=vaenergetico
-        
-    end
-    
-    
-    def set_cangrasas(grasas)
-        
-        @cantgrasas=grasas
-        
-    end
-    
-    def set_cangrasasat(grasasat)
-        
-        @cantgrasasat=grasasat
-        
-    end
-    
-    def set_hidcarb(hidratos)
-        
-        @hidratosc=hidratos
-        
-    end
-        
-    def set_cantazucares(azucar)
-        
-        @azucares=azucar
-    
-    end
-    
-    def set_canfibraa(fibra)
-        
-        @fibraa=fibra
-    
-    end
-        
-    
-    def set_proteina(proteins)
-        
-        @proteinas=proteins
-        
-    end
-    
-    def set_netiquetan(notiqueta)
-        
-        @netiqueta=noetiqueta
-        
-    end
+=end
     
 
-    #3.0v.EInformacionN()
+
+    
+
     
     
 end
