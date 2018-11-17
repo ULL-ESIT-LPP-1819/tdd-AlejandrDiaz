@@ -1,3 +1,3 @@
-## Práctica 7: Desarrollo Dirigido por Pruebas (TDD) utilizando Bundler y Rspec. En esta práctica utilizamos una Lista formada por nodos, y realizamos pruebas creando una lista de objetos de Etiquetas Nutricionales.
+## Prácticas 6, 7 y 8: Desarrollo Dirigido por Pruebas (TDD) utilizando Bundler y Rspec.
 
-#### Autor: Alejandro Díaz Cuecabun
+#### Autor: Alejandro Díaz Cueca
