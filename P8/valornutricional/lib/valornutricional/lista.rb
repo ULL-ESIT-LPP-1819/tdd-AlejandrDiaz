@@ -52,7 +52,7 @@ class Lista
         elem
     end
     
-=begin    def ordenacion_Sal
+=begin    def ordenacion_IMC
         
         
         for i in 1..(tamaño-1)
@@ -99,44 +99,44 @@ class Lista
     
     
     
-def minsal
-    
-        i = 0
-        minsal = 30
+    def minimc
         
-        for i in 0..(tamaño-1)
-            if (minsal > obtener_elem_lista(i).value.sales)
+            i = 0
+            minimc = 30
             
-            
-                minsal = obtener_elem_lista(i).value.sales                    
+            for i in 0..(tamaño-1)
+                if (minimc > obtener_elem_lista(i).value.imc)
                 
+                
+                    minimc = obtener_elem_lista(i).value.imc                    
+                    
+                
+                end
             
             end
+            minimc    
+    end    
+    
+    
+    
+    def maximc
         
-        end
-        minsal    
-end    
-    
-    
-    
-def maxsal
-    
-        i = 0
-        maxsal = 0
-        
-        for i in 0..(tamaño-1)
-            if (maxsal < obtener_elem_lista(i).value.sales)
+            i = 0
+            maximc = 0
             
-            
-                maxsal = obtener_elem_lista(i).value.sales                    
+            for i in 0..(tamaño-1)
+                if (maximc < obtener_elem_lista(i).value.imc)
                 
+                
+                    maximc = obtener_elem_lista(i).value.imc                    
+                    
+                
+                end
             
             end
+            maximc    
+    end
         
-        end
-        maxsal    
-end
-    
     
     
     
@@ -170,6 +170,7 @@ end
     end
     
     def mostrar
+        
         actual = @head
         while actual.next != nil
             puts actual.value.to_s
