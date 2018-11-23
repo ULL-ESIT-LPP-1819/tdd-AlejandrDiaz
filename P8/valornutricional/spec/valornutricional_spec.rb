@@ -82,6 +82,32 @@ describe Individuo do
                     end
     			
     		    end
+    		    
+
+    		     describe "Existe un metodo que inserta un elemento en la lista" do
+            
+                    it "Se inserta correctamente" do
+                      
+                    @lista.push(@nodo5)
+                    expect(@lista.tamaño).to eq(5)
+                    
+                    end
+    			
+    		    end
+    		    
+    		    
+    		    
+    		    describe "Existe un metodo para obtener un elemento de la lista formateado" do
+    		    
+    		            it"Elemento formateado" do
+    		              
+    		            expect(@individuo_1.nombre).to respond_to(:to_s)  
+    		              
+    		            end
+    		    end
+    		    
+    		    
+    		    
 		
 	  end
 	  
@@ -99,21 +125,94 @@ describe Individuo do
         				expect(@consulta1.kind_of? Individuo).to eq(true)
         			end
         			
-        			
-        			it "Comprobar que un individuo no es una instancia de consulta" do
-				        expect(@individuo1.instance_of? Consulta).to eq(false)	
-			        end
+        			it "Individuo no es una clase herencia de Consulta" do
+        			  
+        			   expect(@individuo_1.is_a? Individuo).to eq(true)
+        			   expect(@individuo_1.kind_of? Consulta).to eq(false)
+        			end
       			
       			
       		end
 	  end
+	  
+	  
+	  
+	  context "Clase" do
+	    
+    	     describe "Comprobar la Clase de un Objeto " do
+    	       
+        	      it "El objeto individuo1 pertenece a la clase Individuo" do
+        	        
+    				        expect(@individuo_3).to be_an_instance_of(Individuo)
+    				        
+    			      end
+        	      
+        	      it "El objeto consulta1 pertenece a la clase Consulta" do
+        	        
+    				        expect(@consulta1).to be_an_instance_of(Consulta)
+    				        
+    			      end
+    	       
+    	       
+    	       
+    	       
+    	     end
+	   
+	 end
+	  
+	  
+	  
+	  
+	  context "Tipo" do
+	    
+	          describe "Comprobar el tipo de un Objeto" do
+	            
+	            
+	              it "El objeto inviduo_1 es de tipo Individuo" do
+	                
+	                expect(@individuo_1).to be_a(Individuo)
+	                
+	              end
+	              
+	              
+	              it "El objeto consulta1 es de tipo Consulta" do
+	                
+	                expect(@consulta1).to be_a(Consulta)
+	                
+	              end
+	            
+	          end
+	   
+	  end
+	  
+	  context "Clasificacion" do
+	  
+	  
+	        describe "Clasificacion de individuos por IMC"
+	  
+	  
+            	  it "Existe un metodo para obtener al invidiuo con menor IMC" do
+                    
+                  expect(@lista.minimc).to eq(20.038)  
+                    
+                end
+                it "Existe un metodo para obtener al individuo con mayor IMC" do
+                    
+                  expect(@lista.maximc).to eq(24.038)  
+                    
+                end
+                
+            
+          end
+	  
+	  
+	   end
+	  
 
 	  
 	  
 	  
-	  
-	  
-	  
+
 	  
 	  
 	  
@@ -143,7 +242,6 @@ describe Individuo do
     
     
 
-end
     
     
 
