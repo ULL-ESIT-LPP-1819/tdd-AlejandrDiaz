@@ -97,7 +97,7 @@ describe Individuo do
     		    
     		    
     		    
-    		    describe "Existe un metodo para obtener un elemento de la lista formateado" do
+    		    describe "Existe un metodo para obtener un elemento de la lista de Individuos formateado" do
     		    
     		            it"Elemento formateado" do
     		              
