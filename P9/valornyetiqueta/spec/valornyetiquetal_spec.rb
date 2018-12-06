@@ -6,17 +6,17 @@ require 'valornyetiqueta'
 
 describe Individuo do
     
-    before :all do
+    before :each do
         
-        @individuo_1 = Individuo.new("Alejandro", "Diaz Cueca", 24, 1, 78, 184, 70, 88, 23.038, 16.966, 1.257)
+        @individuo_1 = Individuo.new("Alejandro", "Diaz Cueca", 24, 1, 78, 184, 70, 88, 20.038, 16.966, 1.257)
         
         @individuo_2 = Individuo.new("Bartolo", "Gomez Gutierrez", 26, 1, 87, 180, 80, 95, 24.038, 20.966, 1.403)
         
-        @individuo_3 = Individuo.new("Josele", "Garcia Hernandez", 30, 1, 70, 175, 75, 90, 22.038, 16.966, 1.210)
+        @individuo_3 = Individuo.new("Josele", "Garcia Hernandez", 30, 1, 70, 175, 75, 90, 21.038, 16.966, 1.210)
         
-        @individuo_4 = Individuo.new("Alberto", "Ramos Diaz", 20, 1, 65, 165, 70, 80, 20.038, 12.567, 1.110)
+        @individuo_4 = Individuo.new("Alberto", "Ramos Diaz", 20, 1, 65, 165, 70, 80, 19.038, 12.567, 1.110)
         
-        @individuo_5 = Individuo.new("Maribel", "Hernandez Villanueva", 31, 0, 75, 165, 78, 98, 22.038, 17.567, 1.065)
+        @individuo_5 = Individuo.new("Maribel", "Hernandez Villanueva", 31, 0, 75, 165, 78, 98, 22.538, 17.567, 1.065)
         
       
         @consulta1 = Consulta.new("Gerardo", "Martin Gonzalez", 19, 1, 90, 165, 80, 105, 23.538, 22.567, 1.401, "Si", "Si")
@@ -58,15 +58,6 @@ describe Individuo do
 
 
 
-
-
-
-
-
-
-
-	
-	
 	
 	
     context "Lista" do
@@ -198,7 +189,7 @@ describe Individuo do
 			end
 			
 			it "Comprobando primer individuo tiene mayor o igual imc que el segundo" do
-				expect(@individuo_1 >= @individuo_5).to be true
+				expect(@individuo_5 >= @individuo_1).to be true
 			end
 			
 			it "Comprobando el primer individuo tiene distinto imc al segundo" do
@@ -206,29 +197,54 @@ describe Individuo do
 			end
 		end
 	end
+ 
+  
     
     
     
     
+    context "Enumerable" do
+		
+		describe "Comprobancion clase Lista_doble enumerable" do
+			
+			it "Minimo de la lista" do
+				@lista_doble.insertar_elemento(@individuo_1)
+				@lista_doble.insertar_elemento(@individuo_2)
+				@lista_doble.insertar_elemento(@individuo_3)
+				@lista_doble.insertar_elemento(@individuo_4)
+				@lista_doble.insertar_elemento(@individuo_5)
+				@lista_doble.insertar_elemento(@consulta1)
+				
+				expect(@lista_doble.min).to eq(@individuo_4)
+			end
+			
+			it "Maximo de la lista" do
+				@lista_doble.insertar_elemento(@individuo_1)
+				@lista_doble.insertar_elemento(@individuo_2)
+				@lista_doble.insertar_elemento(@individuo_3)
+				@lista_doble.insertar_elemento(@individuo_4)
+				@lista_doble.insertar_elemento(@individuo_5)
+				@lista_doble.insertar_elemento(@consulta1)
+				
+				expect(@lista_doble.max).to eq(@individuo_2)
+			end
+			
+			it "Orden de la lista" do
+				@lista_doble.insertar_elemento(@individuo_1)
+				@lista_doble.insertar_elemento(@individuo_2)
+				@lista_doble.insertar_elemento(@individuo_3)
+				@lista_doble.insertar_elemento(@individuo_4)
+				@lista_doble.insertar_elemento(@individuo_5)
+				@lista_doble.insertar_elemento(@consulta1)
+				
+				expect(@lista_doble.sort).to eq([@individuo_4, @individuo_1, @individuo_3, @individuo_5, @consulta1, @individuo_2])
+			end
+		end
+	end
+
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  	
     
     
 
@@ -242,19 +258,19 @@ end
 
 describe EtiquetaN do
     
-    before :all do
+    before :each do
         
-        @etiqueta_1 = EtiquetaN.new("Rufles Jamon", 2216, 532, 32.5, 3.0, 49.6, 1.8, 4.3, 6.5, 1.7)
+        @etiqueta_1 = EtiquetaN.new("Rufles Jamon", "2216", "532", "32.5", "3.0", "49.6", "1.8", "4.3", "6.5", "1.7")
         
-        @etiqueta_2 = EtiquetaN.new("Pringles", 2140, 511, 32, 3.6, 51, 2.8, 2.6, 4.0, 1.4)
+        @etiqueta_2 = EtiquetaN.new("Pringles", "2140", "511", "32", "3.6", "51", "2.8", "2.6", "4.0", "1.4")
         
-        @etiqueta_3 = EtiquetaN.new("Nutella", 2273, 544, 6.0, 57.3, 56.7, 31.6, 10.9, 3.4, 0.037)
+        @etiqueta_3 = EtiquetaN.new("Nutella", "2273", "544", "6.0", "57.3", "56.7", "31.6", "10.9", "3.4", "0.037")
         
-        @etiqueta_4 = EtiquetaN.new("Chiquilin Energy", 2057, 491, 6.5, 66.0, 28.0, 22.0, 11.0, 3.6, 0.24)
+        @etiqueta_4 = EtiquetaN.new("Chiquilin Energy", "2057", "491", "6.5", "66.0", "28.0", "22.0", "11.0", "3.6", "0.24")
         
-        @etiqueta_5 = EtiquetaN.new("Tortitas de Arroz", 1558, 368, 9.0, 75.0, 1.0, 3.0, 0.6, 2.7, 0.50)
+        @etiqueta_5 = EtiquetaN.new("Tortitas de Arroz", "1558", "368", "9.0", "75.0", "1.0", "3.0", "0.6", "2.7", "0.50")
         
-        @producto_1 = TProducto.new("Tuestis", 2094, 500, 23.0, 13.0, 66.0, 28.0, 3.0, 5.7, 0.75, "20-12-2019", "Procesado", "Si")
+        @producto_1 = TProducto.new("Tuestis", "2094", "500", "23.0", "13.0", "66.0", "28.0", "3.0", "5.7", "0.75", "20-12-2019", "Procesado", "Si")
         
       
       
@@ -428,7 +444,45 @@ context "Comparable" do
 
 
 
-
+context "Enumerable" do
+		
+		describe "Comprobancion clase Lista_doble enumerable" do
+			
+			it "Minimo de la lista" do
+				@lista_doble2.insertar_elemento(@etiqueta_1)
+				@lista_doble2.insertar_elemento(@etiqueta_2)
+				@lista_doble2.insertar_elemento(@etiqueta_3)
+				@lista_doble2.insertar_elemento(@etiqueta_4)
+				@lista_doble2.insertar_elemento(@etiqueta_5)
+				@lista_doble2.insertar_elemento(@producto_1)
+				
+				expect(@lista_doble2.min).to eq(@etiqueta_5)
+			end
+			
+			it "Maximo de la lista" do
+				@lista_doble2.insertar_elemento(@etiqueta_1)
+				@lista_doble2.insertar_elemento(@etiqueta_2)
+				@lista_doble2.insertar_elemento(@etiqueta_3)
+				@lista_doble2.insertar_elemento(@etiqueta_4)
+				@lista_doble2.insertar_elemento(@etiqueta_5)
+				@lista_doble2.insertar_elemento(@producto_1)
+				
+				expect(@lista_doble2.max).to eq(@etiqueta_1)
+			end
+			
+			it "Orden de la lista" do
+				@lista_doble2.insertar_elemento(@etiqueta_1)
+				@lista_doble2.insertar_elemento(@etiqueta_2)
+				@lista_doble2.insertar_elemento(@etiqueta_3)
+				@lista_doble2.insertar_elemento(@etiqueta_4)
+				@lista_doble2.insertar_elemento(@etiqueta_5)
+				@lista_doble2.insertar_elemento(@producto_1)
+				
+				
+				expect(@lista_doble2.sort).to eq([@etiqueta_5, @etiqueta_3, @etiqueta_4, @etiqueta_2, @producto_1, @etiqueta_1])
+			end
+		end
+	end
 
 
 
