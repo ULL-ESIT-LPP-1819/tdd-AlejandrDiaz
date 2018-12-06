@@ -39,7 +39,7 @@ class Individuo
             def <=> (other)
                 
                 
-               @imc <=> other.imc 
+               @imc <=> other.imc
                 
             end
             
@@ -49,9 +49,9 @@ class Individuo
             def to_i
                     
             
-                    "#{@edad}\n"
-                    "#{@genero}\n"
-                    "#{@peso}\n"
+                    "#{@edad}"
+                    "#{@genero}"
+                    "#{@peso}"
             
             end
             
@@ -59,12 +59,12 @@ class Individuo
                 
                     
                     
-                    "#{@talla}\n"
-                    "#{@cadera}\n"
-                    "#{@cintura}\n"
-                    "#{@imc}\n"
-                    "#{@porcentgrasa}\n"
-                    "#{@rcc}\n"
+                    "#{@talla}"
+                    "#{@cadera}"
+                    "#{@cintura}"
+                    "#{@imc}"
+                    "#{@porcentgrasa}"
+                    "#{@rcc}"
             
             end
 
@@ -109,10 +109,10 @@ class Consulta < Individuo
                     
                     super :nombre, :apellidos
             
-                    "#{@nombre}\n"
-                    "#{@apellidos}\n"
-                    "#{@paciente}\n"
-                    "#{@tratamiento}\n"
+                    "#{@nombre}"
+                    "#{@apellidos}"
+                    "#{@paciente}"
+                    "#{@tratamiento}"
             
             end
             
@@ -123,9 +123,9 @@ class Consulta < Individuo
                     
                     super :edad, :genero, :peso
             
-                    "#{@edad}\n"
-                    "#{@genero}\n"
-                    "#{@peso}\n"
+                    "#{@edad}"
+                    "#{@genero}"
+                    "#{@peso}"
             
             end
             
@@ -134,12 +134,12 @@ class Consulta < Individuo
                     super :talla, :cadera, :cintura, :imc, :porcentgrasa, :rcc
                     
                     
-                    "#{@talla}\n"
-                    "#{@cadera}\n"
-                    "#{@cintura}\n"
-                    "#{@imc}\n"
-                    "#{@porcentgrasa}\n"
-                    "#{@rcc}\n"
+                    "#{@talla}"
+                    "#{@cadera}"
+                    "#{@cintura}"
+                    "#{@imc}"
+                    "#{@porcentgrasa}"
+                    "#{@rcc}"
 
             
             
@@ -161,7 +161,7 @@ class EtiquetaN
             attr_accessor :netiqueta, :venergeticokJ, :venergeticokcal, :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
             
             
-            def initialize(ntiqueta, venergeticokJ, venergeticokcal, cantgrasas, cantgrasasat, hidratosc, azucares, fibraa, proteinas, sales)
+            def initialize(netiqueta, venergeticokJ, venergeticokcal, cantgrasas, cantgrasasat, hidratosc, azucares, fibraa, proteinas, sales)
             
             @netiqueta = netiqueta
             @venergeticokJ = venergeticokJ
@@ -170,8 +170,8 @@ class EtiquetaN
             @cantgrasasat = cantgrasasat
             @hidratosc = hidratosc
             @azucares = azucares
-            @proteinas = proteinas
             @fibraa = fibraa
+            @proteinas = proteinas
             @sales = sales
             
             end    
@@ -179,18 +179,20 @@ class EtiquetaN
     
     def to_s
     
-    "#{@netiqueta}"
+     #"#{@netiqueta}\n#{@venergeticokJ}\n#{@venergeticokcal}\n#{@cantgrasas}\n#{@cantgrasasat}\n#{@hidratosc})\n#{@azucares}\n#{@fibraa}\n#{@proteinas}\n#{@sales}"
     
+    "#{@netiqueta}"
     
     end
     
     def <=> (other)
                 
                 
-               @proteinas <=> other.proteinas 
+     @proteinas <=> other.proteinas
                 
-            end
-    
+    end
+ 
+ 
     def to_f
         
     "#{@venergeticokJ}"
@@ -205,6 +207,7 @@ class EtiquetaN
     
     end
 
+
 end
 
 
@@ -212,7 +215,7 @@ class TProducto < EtiquetaN
                 attr_accessor :fcaducidad, :tipo, :aceitepalma
                 
             
-                def initialize(ntiqueta, venergeticokJ, venergeticokcal, cantgrasas, cantgrasasat, hidratosc, azucares, fibraa, proteinas, sales, fcaducidad, tipo, aceitepalma)
+                def initialize(netiqueta, venergeticokJ, venergeticokcal, cantgrasas, cantgrasasat, hidratosc, azucares, fibraa, proteinas, sales, fcaducidad, tipo, aceitepalma)
                     
                     
                     super :netiqueta, :venergeticokJ, :venergeticokcal, :cantgrasas, :cantgrasasat, :hidratosc, :azucares, :fibraa, :proteinas, :sales
@@ -225,8 +228,8 @@ class TProducto < EtiquetaN
                         @cantgrasasat = cantgrasasat
                         @hidratosc = hidratosc
                         @azucares = azucares
-                        @proteinas = proteinas
                         @fibraa = fibraa
+                        @proteinas = proteinas
                         @sales = sales
                         @fcaducidad = fcaducidad
                         @tipo = tipo
@@ -240,7 +243,9 @@ class TProducto < EtiquetaN
                 
                 
                 def to_s
-                        
+                                        
+                    #"#{@netiqueta}\n#{@venergeticokJ}\n#{@venergeticokcal}\n#{@cantgrasas}\n#{@cantgrasasat}\n#{@hidratosc}\n#{@azucares}\n#{@fibraa}\n#{@proteinas}\n#{@sales}\n#{@fcaducidad}\n#{@tipo}\n#{@aceitepalma}"
+                    
                     super :netiqueta
                     
                     "#{@netiqueta}"
