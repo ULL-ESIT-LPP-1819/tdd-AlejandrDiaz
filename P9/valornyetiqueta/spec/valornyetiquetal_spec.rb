@@ -239,6 +239,30 @@ describe Individuo do
 				
 				expect(@lista_doble.sort).to eq([@individuo_4, @individuo_1, @individuo_3, @individuo_5, @consulta1, @individuo_2])
 			end
+			
+			it "Collect de la lista" do
+				@lista_doble.insertar_elemento(@individuo_1)
+				@lista_doble.insertar_elemento(@individuo_2)
+				@lista_doble.insertar_elemento(@individuo_3)
+				@lista_doble.insertar_elemento(@individuo_4)
+				@lista_doble.insertar_elemento(@individuo_5)
+				@lista_doble.insertar_elemento(@consulta1)
+				
+				expect(@lista_doble.collect{0}).to eq([0, 0, 0, 0, 0, 0])
+			end
+			
+=begin			
+			it "Select de la lista" do
+				@lista_doble.insertar_elemento(@individuo_1)
+				@lista_doble.insertar_elemento(@individuo_2)
+				@lista_doble.insertar_elemento(@individuo_3)
+				@lista_doble.insertar_elemento(@individuo_4)
+				@lista_doble.insertar_elemento(@individuo_5)
+				@lista_doble.insertar_elemento(@consulta1)
+				
+				expect(@lista_doble.select{@consulta1}).to eq([])
+			end
+=end
 		end
 	end
 
@@ -481,6 +505,19 @@ context "Enumerable" do
 				
 				expect(@lista_doble2.sort).to eq([@etiqueta_5, @etiqueta_3, @etiqueta_4, @etiqueta_2, @producto_1, @etiqueta_1])
 			end
+			
+			
+			it "Collect de la lista" do
+			@lista_doble2.insertar_elemento(@etiqueta_1)
+			@lista_doble2.insertar_elemento(@etiqueta_2)
+			@lista_doble2.insertar_elemento(@etiqueta_3)
+			@lista_doble2.insertar_elemento(@etiqueta_4)
+			@lista_doble2.insertar_elemento(@etiqueta_5)
+			@lista_doble2.insertar_elemento(@producto_1)
+			
+			expect(@lista_doble2.collect{0}).to eq([0, 0, 0, 0, 0, 0])
+			end
+
 		end
 	end
 
