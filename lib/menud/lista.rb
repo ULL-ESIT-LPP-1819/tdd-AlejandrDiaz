@@ -148,6 +148,42 @@ class Lista_doble
        end
    end
    
+   def convert_a_for
+       
+    
+        n_array= []
+        
+        enum=@head
+        
+        for i in self do
+                
+            n_array.push(enum.value)
+            enum = enum.next
+        end
+       n_array.bubblefor
+      
+   end
+   
+    
+    def convert_a_each
+       
+    
+        n_array= []
+        
+        enum=@head
+        
+        for i in self do
+                
+            n_array.push(enum.value)
+            enum = enum.next
+        end
+       n_array.bubbleach
+      
+    end
+    
+    
+    
+   
     
 end
 

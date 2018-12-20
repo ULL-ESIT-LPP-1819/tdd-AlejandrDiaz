@@ -120,7 +120,7 @@ class Individuo
                     
                 @gasto_e_basal = ((10 * @peso) + (6.25 * @talla) - (5 * @edad) + 5 ) 
             
-            elsif(sex = 0)
+            elsif
                  @gasto_e_basal = ((10 * @peso) + (6.25 * @talla) - (5 * @edad) - 161 ) 
             end
                 

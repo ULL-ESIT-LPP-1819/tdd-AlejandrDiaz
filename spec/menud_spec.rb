@@ -1,10 +1,12 @@
 require 'spec_helper'
 require 'menud'
+require 'benchmark'
 
 
 
 
 describe Individuo do
+	
     
     before :each do
         
@@ -410,7 +412,7 @@ describe Individuo do
 		
 			kcal__totales = kcal_m.reduce(:+)
 			
-			g_energetico_indv = @individuo_4.gasto_energetico_t
+			g_energetico_indv = @individuo_5.gasto_energetico_t
 			
 			expect(kcal__totales >= g_energetico_indv).to eq(false)
 		
@@ -426,6 +428,190 @@ describe Individuo do
     
     
     
+    
+    
+   describe "Práctica 11: Representando Array de 10 menús y lista de 10 menús de valoraciones nutricionales de individuos" do
+   	
+   		describe "Lista de 10 Menús de valoraciones nutricionales con sus respectivas pruebas" do
+		
+		
+	   		before:each do
+	   	
+	   		@individuo_1 = Individuo.new("Alejandro", "Diaz Cueca", 24, 1, 78, 184, 70, 88, 20.038, 16.966, 1.257, 75.5, 1815, 181.5, 490.0, 0.27, 2486.5)
+	        
+	        @individuo_2 = Individuo.new("Bartolo", "Gomez Gutierrez", 26, 1, 87, 180, 80, 95, 24.038, 20.966, 1.403, 72.5, 1870, 187, 224.4, 0.12, 2281.4)
+	        
+	        @individuo_3 = Individuo.new("Josele", "Garcia Hernandez", 30, 1, 70, 175, 75, 90, 21.038, 16.966, 1.210, 68.7, 1900.2, 180.2, 200.1, 0.12, 2280.5)
+	        
+	        @individuo_4 = Individuo.new("Alberto", "Ramos Diaz", 20, 1, 65, 165, 70, 80, 19.038, 12.567, 1.110, 61.2, 1586.2, 158.6, 856.4, 0.54, 2601.2)
+	        
+	        @individuo_5 = Individuo.new("Maribel", "Hernandez Villanueva", 31, 0, 75, 165, 78, 98, 22.538, 17.567, 1.065, 61.2,1465.2, 146.5, 0.0, 0.0, 1611.7)
+	   	
+	   		@individuo_6 = Individuo.new("Gerardo", "Martin Gonzalez", 19, 1, 90, 165, 80, 105, 23.538, 22.567, 1.401, 61.2, 1841.2, 184.1, 497.0, 0.27, 2522.3)
+	   		
+	   		@individuo_7 = Individuo.new("Pepeberto", "Juanpablo", 44, 1, 78, 186, 70, 88, 20.038, 16.966, 1.257, 75.5, 1815, 181.5, 490.0, 0.27, 2780.2)
+	        
+	        @individuo_8 = Individuo.new("Jonathan", "Gutierrez", 26, 1, 87, 180, 80, 95, 24.038, 20.966, 1.403, 72.5, 1500, 150, 220.4, 0.12, 1870.4)
+	        
+	        @individuo_9 = Individuo.new("Juana", "Garcia", 30, 0, 70, 175, 75, 90, 21.038, 16.966, 1.210, 68.7, 1648.7, 164.9, 197.8, 0.12, 2011.4)
+	        
+	        @individuo_10 = Individuo.new("Antonio", "Diaz", 20, 1, 65, 165, 70, 80, 19.038, 12.567, 1.110, 61.2, 1700, 125, 870.2, 0.54, 2695.2)
+	        
+	   		@lista_doble = Lista_doble.new
+	   		
+	   		
+	   		
+	   		end
+   	
+   		
+   	
+	   		it "Creando lista de individuos, realizando pruebas y benchmark" do
+	   		
+	   		
+	   		
+	   		@lista_doble.insertar_elemento(@individuo_1.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_2.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_3.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_4.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_5.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_6.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_7.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_8.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_9.gasto_energetico_t)
+	   		@lista_doble.insertar_elemento(@individuo_10.gasto_energetico_t)
+	   		
+	   		
+	   		expect(@lista_doble.head.value).to eq(2695.2)
+	   		expect(@lista_doble.head.next.value).to eq(2011.4)
+	   		expect(@lista_doble.head.next.next.value).to eq(1870.4)
+	   		expect(@lista_doble.head.next.next.next.value).to eq(2486.5)
+	   		expect(@lista_doble.head.next.next.next.next.value).to eq(2522.3)
+	   		expect(@lista_doble.head.next.next.next.next.next.value).to eq(1611.7)
+	   		expect(@lista_doble.head.next.next.next.next.next.next.value).to eq(2601.2)
+	   		expect(@lista_doble.head.next.next.next.next.next.next.next.value).to eq(2280.5)
+	   		expect(@lista_doble.head.next.next.next.next.next.next.next.next.value).to eq(2281.4)
+	   		expect(@lista_doble.head.next.next.next.next.next.next.next.next.next.value).to eq(2486.5)
+	   		expect(@lista_doble.convert_a_for).to eq([1611.7,1870.4,2011.4,2280.5,2281.4,2486.5,2486.5,2522.3,2601.2,2695.2])
+	   		expect(@lista_doble.convert_a_each).to eq([2695.2, 2011.4, 1870.4, 2486.5, 2522.3, 1611.7, 2601.2, 2280.5, 2281.4, 2486.5])
+	   		expect(@lista_doble.sort).to eq([1611.7,1870.4,2011.4,2280.5,2281.4,2486.5,2486.5,2522.3,2601.2,2695.2])
+	   		
+	   		
+	   		include Benchmark
+	   		
+	   		n = 50000
+	   		
+	   		
+	   		Benchmark.benchmark() do |x|
+	   			
+			 tf = x.report("bubblefor lista") { 1.upto(n) do @lista_doble.convert_a_for end }
+			 tt = x.report("bubbleach lista") { 1.upto(n) do @lista_doble.convert_a_each end }
+			 tu = x.report("sort lista") { 1.upto(n) do @lista_doble.sort end }
+			
+			
+			end	
+	   		
+	   		
+	   		
+	   		
+	   		
+	   		
+	   		
+	   		
+	   		
+	   		
+	   		end
+	   	
+	    end 
+   
+   	
+   	
+   	
+   		describe "Array de 10 menus con sus respectivas pruebas"
+		   	it "Creando Array de menus, realizando pruebas y benchmarks " do
+		   		
+		   		
+					
+					@rufles = EtiquetaN.new("Rufles Jamon", 2216, "532", "32.5", "3.0", "49.6", "1.8", "4.3", "6.5", "1.7")
+			        
+			        @pringles = EtiquetaN.new("Pringles", 2140, "511", "32", "3.6", "51", "2.8", "2.6", "4.0", "1.4")
+			        
+			        @nutella = EtiquetaN.new("Nutella", 2273, "544", "6.0", "57.3", "56.7", "31.6", "10.9", "3.4", "0.037")
+			        
+			        @energy = EtiquetaN.new("Chiquilin Energy", 2057, "491", "6.5", "66.0", "28.0", "22.0", "11.0", "3.6", "0.24")
+			        
+			        @tortitas = EtiquetaN.new("Tortitas de Arroz", 1558, "368", "9.0", "75.0", "1.0", "3.0", "0.6", "2.7", "0.50")
+			        
+			        @galletas = TProducto.new("Tuestis", 2094, "500", "23.0", "13.0", "66.0", "28.0", "3.0", "5.7", "0.75", "20-12-2019", "Procesado", "Si")	
+					
+					
+					@menud_1 = [@rufles, @galletas].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_2 = [@pringles,@tortitas].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_3 = [@tortitas].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_4 = [@rufles,@pringles,@galletas].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_5 = [@tortitas,@nutella].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_6 = [@pringles,@energy].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_7 = [@galletas,@nutella].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_8 = [@tortitas,@rufles].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_9 = [@rufles,@pringles,@nutella].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					@menud_10 = [@galletas,@rufles,@energy].reduce(0) {|suma, x| (suma + x.venergeticokJ)}
+					
+					@array_menus=[@menud_1,@menud_2,@menud_3,@menud_4,@menud_5,@menud_6,@menud_7,@menud_8,@menud_9,@menud_10]
+			
+				
+		   		
+		   			expect(@menud_1).to eq(4310)
+		   			expect(@menud_2).to eq(3698)
+		   			expect(@menud_3).to eq(1558)
+		   			expect(@menud_4).to eq(6450)
+		   			expect(@menud_5).to eq(3831)
+		   			expect(@menud_6).to eq(4197)
+		   			expect(@menud_7).to eq(4367)
+		   			expect(@menud_8).to eq(3774)
+		   			expect(@menud_9).to eq(6629)
+		   			expect(@menud_10).to eq(6367)
+		   			expect(@array_menus).to eq([4310,3698,1558,6450,3831,4197,4367,3774,6629,6367])
+		   			expect(@array_menus.bubblefor).to eq([1558,3698,3774,3831,4197,4310,4367,6367,6450,6629])
+		   			expect(@array_menus.bubbleach).to eq([1558,3698,3774,3831,4197,4310,4367,6367,6450,6629])
+		   			expect(@array_menus.sort).to eq([1558,3698,3774,3831,4197,4310,4367,6367,6450,6629])
+		   			
+		   			include Benchmark
+		   			
+		   			n= 50000
+		   			
+		   			Benchmark.benchmark() do |x|
+		   				
+		   			tf = x.report("bubblefor array") { 1.upto(n) do @array_menus.bubblefor end }
+		   			tt = x.report("bubbleach array") { 1.upto(n) do @array_menus.bubbleach end }
+		   			tu = x.report("sort array") { 1.upto(n) do @array_menus.sort end }
+		   			
+		   			
+		   			end
+		   		
+		   	 end
+   		end
+   	end
+   		
+   		
+   		
+   		
+  
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   	
+   
+   
+   
+   
+
     
     
     
@@ -454,7 +640,6 @@ describe Individuo do
     
   
 
-end
 
 
 
