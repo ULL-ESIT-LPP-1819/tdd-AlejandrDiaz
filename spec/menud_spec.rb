@@ -584,7 +584,6 @@ describe Individuo do
 		   			tt = x.report("bubbleach array") { 1.upto(n) do @array_menus.bubbleach end }
 		   			tu = x.report("sort array") { 1.upto(n) do @array_menus.sort end }
 		   			
-		   			
 		   			end
 		   		
 		   	 end
