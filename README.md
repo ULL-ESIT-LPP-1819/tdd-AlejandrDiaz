@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ULL-ESIT-LPP-1819/tdd-AlejandrDiaz.svg?branch=master)](https://travis-ci.org/ULL-ESIT-LPP-1819/tdd-AlejandrDiaz)
+[![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-LPP-1819/tdd-AlejandrDiaz/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-LPP-1819/tdd-AlejandrDiaz?branch=master)
 
 
 # Menud
