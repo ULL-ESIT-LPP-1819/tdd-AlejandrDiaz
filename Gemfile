@@ -13,7 +13,7 @@ gem 'minitest'
 gem 'test-unit'
 gem 'rdoc', '~> 6.1.0.beta2'
 gem 'rake', '~> 12.3.2'
-gem 'coveralls'
+gem 'coveralls', require: false
 
 
 
