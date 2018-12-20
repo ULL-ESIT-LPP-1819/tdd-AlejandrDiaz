@@ -1,4 +1,3 @@
 service_name: travis-ci
 
-after_success:
-- CI=true TRAVIS=true coveralls --verbose
+repo_token: rRTeyuv103RFARmSBqKlBRjUsib2OxtNx
