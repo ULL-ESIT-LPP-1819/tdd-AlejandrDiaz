@@ -2,6 +2,17 @@ $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
 require 'bundler/setup'
 require 'menud'
 require 'coveralls'
+
+module Coveralls
+  def should_run?
+    true
+  end
+
+  def will_run?
+    true
+  end
+end if ENV['CI']
+
 Coveralls.wear!
 
 
