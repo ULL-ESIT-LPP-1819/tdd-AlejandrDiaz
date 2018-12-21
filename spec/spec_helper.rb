@@ -1,10 +1,10 @@
-require "bundler/setup"
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require 'bundler/setup'
 require 'menud'
 require 'coveralls'
 Coveralls.wear!
 
-=begin
+
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
   config.example_status_persistence_file_path = ".rspec_status"
@@ -16,4 +16,3 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
-=end

@@ -5,7 +5,7 @@ require 'benchmark'
 
 
 
-describe Individuo do
+RSpec.describe Individuo do
 	
     
     before :each do
@@ -648,7 +648,7 @@ describe Individuo do
 
 
 
-describe EtiquetaN do
+RSpec.describe EtiquetaN do
     
     before :each do
         
