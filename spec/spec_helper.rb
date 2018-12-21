@@ -1,7 +1,7 @@
-#require "bundler/setup"
+require "bundler/setup"
 $LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require "menud"
-require "coveralls"
+require 'menud'
+require 'coveralls'
 Coveralls.wear!
 
 =begin

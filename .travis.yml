@@ -8,12 +8,5 @@ rvm:
 
 before_install: gem install bundler -v 1.17.1
 
-
-
-env:
-  global:
-    - CI=true
-    - TRAVIS=true
-
 after_success:
     - CI=true TRAVIS=true coveralls --verbose
