@@ -375,6 +375,7 @@ class TProducto < EtiquetaN
                 end
                 
                 # Method to transform into string
+=begin
                 def to_s
                                         
                     #"#{@netiqueta}\n#{@venergeticokJ}\n#{@venergeticokcal}\n#{@cantgrasas}\n#{@cantgrasasat}\n#{@hidratosc}\n#{@azucares}\n#{@fibraa}\n#{@proteinas}\n#{@sales}\n#{@fcaducidad}\n#{@tipo}\n#{@aceitepalma}"
@@ -389,7 +390,7 @@ class TProducto < EtiquetaN
                 
                 
                 end
-                
+
                 # Method to transform into float
                 def to_f
                 
@@ -406,7 +407,7 @@ class TProducto < EtiquetaN
                 
                 
                 end
-                
+=end
                 
                 
                 
