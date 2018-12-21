@@ -198,6 +198,7 @@ class Consulta < Individuo
             end
             
             # Method to transform into string
+=begin
             def to_s
                     
                     super :nombre, :apellidos
@@ -244,7 +245,7 @@ class Consulta < Individuo
             
             
             end
-            
+=end            
                     
                     
             
@@ -291,8 +292,9 @@ class EtiquetaN
             @sales = sales
             
             end    
-    
+   
     # Method to transform into string
+=begin
     def to_s
     
      #"#{@netiqueta}\n#{@venergeticokJ}\n#{@venergeticokcal}\n#{@cantgrasas}\n#{@cantgrasasat}\n#{@hidratosc})\n#{@azucares}\n#{@fibraa}\n#{@proteinas}\n#{@sales}"
@@ -300,7 +302,7 @@ class EtiquetaN
     "#{@netiqueta}"
     
     end
-    
+=end
     
     #Method to get the value of proteins and do the comparison
     def <=> (other)
@@ -311,6 +313,7 @@ class EtiquetaN
     end
  
     #Method to transform into float
+=begin
     def to_f
         
     "#{@venergeticokJ}"
@@ -324,7 +327,7 @@ class EtiquetaN
     
     
     end
-
+=end
 
 end
 
