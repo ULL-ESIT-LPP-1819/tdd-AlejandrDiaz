@@ -1,6 +1,3 @@
-$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
-require 'bundler/setup'
-require 'menud'
 require 'coveralls'
 
 module Coveralls
@@ -14,6 +11,12 @@ module Coveralls
 end if ENV['CI']
 
 Coveralls.wear!
+
+
+#$LOAD_PATH.unshift File.expand_path("../../lib", __FILE__)
+require 'bundler/setup'
+require 'menud'
+
 
 
 RSpec.configure do |config|
