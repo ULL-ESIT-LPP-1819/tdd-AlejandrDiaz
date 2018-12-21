@@ -53,7 +53,7 @@ class Individuo
                                 
                                 
             end
-            
+=begin   
             # Method to transform into string
             def to_s
                     
@@ -61,7 +61,7 @@ class Individuo
                     "#{@apellidos}\n"
             
             end
-            
+=end
             # Method to get the value of imc and do the comparison
             def <=> (other)
                 
@@ -71,7 +71,7 @@ class Individuo
             end
             
             
-            
+=begin    
             # Method to transform into int 
             def to_i
                     
@@ -105,7 +105,7 @@ class Individuo
                     
             
             end
-
+=end
 
             def peso_total_ideal
                 
