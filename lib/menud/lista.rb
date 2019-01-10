@@ -148,6 +148,7 @@ class Lista_doble
        end
    end
    
+ 
    def convert_a_for
        
     
