@@ -208,7 +208,6 @@ class Menuds
         
         output << "\Venergeticot #{@venergeticot.round(3)}" + "\n"
         
-        puts output
              
              
              
